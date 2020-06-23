@@ -13,7 +13,7 @@
       display: grid;
       grid-gap: 2rem;
       grid-template-columns: $columns;
-      grid-template-rows: repeat(3, 1fr);
+      // grid-template-rows: repeat(3, 1fr);
       // flex-direction: $flex-direction;
       // justify-content: flex-start;
       // align-items: center;
@@ -205,7 +205,7 @@ nav {
 }
 .card-img {
   min-width: 250px;;
-  min-height: 160px;
+  min-height: 180px;
   padding: 13px;
   display: inline-block;
 }
@@ -217,8 +217,8 @@ nav {
   font-weight: 700;
 }
 .card-content {
-  min-width: 250px;;
-  min-height: 150px;
+  // min-width: 250px;;
+  // min-height: 150px;
   word-wrap: normal;
   padding: 1rem;
   color: rgba($color: #605d5d, $alpha: 1.0)
