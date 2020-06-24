@@ -1,4 +1,4 @@
-@mixin themeable($theme-name, $flex-direction, $secondary-display, $columns) {
+@mixin themeable($theme-name, $flex-direction, $secondary-display, $columns, $card-content-fontSize) {
   .#{$theme-name} {
     .content {
       margin-top: 1.5rem;
@@ -29,7 +29,7 @@
       border-color: hsla(100%, 50%, 25%, 0.2);
       // border-right-color: hsla(100%, 50%, 25%, 0.2);
       background-color: rgba(255,255,255,1);
-    } 
+    }
     .secondary {
       display: $secondary-display;
       flex-direction: column;
@@ -46,13 +46,17 @@
       // border-right-color: hsla(100%, 50%, 25%, 0.2);
       background-color: rgba(var(--d87,255,255,255),1);
     }
-
+    .card-content {
+      font-size: $card-content-fontSize;
+      margin-bottom: 2rem;
+    }
   }
 
 }
 
 .content {
   margin-top: 1.5rem;
+  margin-bottom: 3rem;
   width: 70%;
   display: grid;
   grid-gap: 1em;
@@ -65,16 +69,15 @@ nav {
   width: 100%;
   padding: 0 20px;
   background-color: rgba(255,255,255,1);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.61);
   .right {
     background-color: rgba(255,255,255,1); 
-    width: 10%;
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
+    align-items: center;
   }
   .left {
     font-size: 1.7rem;
@@ -90,6 +93,17 @@ nav {
     padding: 0.4rem 2rem;
     border-radius: 0.3rem;
     background-color: rgba($color: #aaaaaa, $alpha: 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .nav-bottom {
+    height: 3rem;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
   }
 }
 .main {
@@ -114,6 +128,10 @@ nav {
   //   padding: 1rem;
   //   // margin-top: 3rem;
   // }
+}
+.mainNew {
+  display: grid;
+  grid-template-columns: 1fr; // 1fr 1fr 1fr
 }
 .secondary {
   // position: fixed;
@@ -162,6 +180,19 @@ nav {
 }
 .content-wrapper {
   text-align: center;
+}
+.activity-panel {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.sub-head {
+  height: 3rem;
+  padding: 2rem;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .activities {
   // height: 50%;
@@ -250,6 +281,9 @@ nav {
     display: none;
   }
 }
+.red {
+  color: red;
+}
 @media (max-width: 991px)
 {
   .content {
@@ -257,6 +291,6 @@ nav {
     grid-template-rows: repeat(auto, auto);
   } 
 }
-@include themeable(theme-1, row, none, 1fr 1fr);
-@include themeable(theme-2, row, none, 1fr 1fr 1fr);
-@include themeable(detail, row, none, 1fr 1fr);
+@include themeable(theme-1, row, none, 1fr 1fr, 1rem);
+@include themeable(theme-2, row, none, 1fr 1fr 1fr, 1rem);
+@include themeable(detail, row, none, 1fr 1fr, 2rem);

@@ -1,0 +1,12 @@
+.content {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.content-wrapper-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+}
+.G-4-5-10 {
+  grid-column-start: 4;
+  grid-column-end: 6;
+}
